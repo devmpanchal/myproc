@@ -9,17 +9,16 @@ import { HttpHeaders } from '@angular/common/http';
 
 export class EmployeeService {
 
-  private apiUrl = 'http://localhost:50814/api';
+  private apiUrl = 'http://localhost:50814/api/employee';
 
   constructor(private http: HttpClient) { }
 
   getEmployees(): Observable<any[]> {
-    return this.http.get<any[]>(this.apiUrl + "/employee");
+    return this.http.get<any[]>(this.apiUrl);
   }
-
+  
   saveEmployee(employee: any): Observable<any> {
-    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-    return this.http.post<any>(this.apiUrl+"/employee", employee, { headers });
+    return this.http.post<any>(this.apiUrl, employee);
   }
 
 }

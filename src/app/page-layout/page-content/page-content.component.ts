@@ -1,17 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { EmployeeService } from '../../employee.service';
-import { Subscription } from 'rxjs';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
-interface Employee {
-  EmployeeID: number;
-  FirstName: string;
-  LastName: string;
-  Email: string;
-  MobileNo: string;
-  Gender: string;
-  Status: string;
-}
+import { NgForm } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-page-content',
@@ -19,22 +9,11 @@ interface Employee {
   styleUrl: './page-content.component.css'
 })
 
-export class PageContentComponent implements OnInit {
+export class PageContentComponent {
 
   employees: any[] = [];
-  employeeForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private employeeService: EmployeeService) {
-    this.employeeForm = this.fb.group({
-      EmployeeID: [0],
-      FirstName: ['', Validators.required],
-      LastName: ['', Validators.required],
-      Email: ['', [Validators.required, Validators.email]],
-      MobileNo: ['', Validators.required],
-      Gender: ['', Validators.required],
-      Status: ['', Validators.required]
-    });
-  }
+  constructor(private employeeService: EmployeeService) { }
 
   ngOnInit(): void {
     this.refreshEmployees();
@@ -47,18 +26,8 @@ export class PageContentComponent implements OnInit {
     );
   }
 
-  saveEmployee(): void {
-    if (this.employeeForm.valid) {
-      const newEmployee: Employee = this.employeeForm.value;
-
-      this.employeeService.saveEmployee(newEmployee).subscribe(
-        response => {
-          console.log('Employee saved successfully', response);
-          this.refreshEmployees(); // Refresh the employee list after saving
-          this.employeeForm.reset(); // Clear the form after saving
-        },
-        error => console.error('Error saving employee', error)
-      );
-    }
+  saveEmp(emp:NgForm): void {
+    console.log(emp)
   }
+  
 }
