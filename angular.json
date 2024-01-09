@@ -39,13 +39,13 @@
               "src/assets/css/bootstrap.min.css",
               "src/assets/css/icons.min.css",
               "src/assets/css/app.min.css"
-          
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
               "node_modules/metismenu/dist/metisMenu.min.js",
               "node_modules/jquery-slimscroll/jquery.slimscroll.min.js",
-              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+              "node_modules/popper.js/dist/umd/popper.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
             ]
           },
           "configurations": {
@@ -112,7 +112,8 @@
               "node_modules/jquery/dist/jquery.min.js",
               "node_modules/metismenu/dist/metisMenu.min.js",
               "node_modules/jquery-slimscroll/jquery.slimscroll.min.js",
-              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+              "node_modules/popper.js/dist/umd/popper.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
             ]
           }
         }

@@ -1,13 +1,3 @@
-/*
-Template Name: Uplon - Responsive Bootstrap 4 Admin Dashboard
-Author: CoderThemes
-Version: 2.0.0
-Website: https://coderthemes.com/
-Contact: support@coderthemes.com
-File: Main Js File
-*/
-
-
 !function ($) {
     "use strict";
 
@@ -53,17 +43,17 @@ File: Main Js File
         });
     },
 
-    // Counterup
-    Components.prototype.initCounterUp = function() {
-        var delay = $(this).attr('data-delay')?$(this).attr('data-delay'):100; //default is 100
-        var time = $(this).attr('data-time')?$(this).attr('data-time'):1200; //default is 1200
-         $('[data-plugin="counterup"]').each(function(idx, obj) {
-            $(this).counterUp({
-                delay: 100,
-                time: 1200
-            });
-         });
-    },
+    // // Counterup
+    // Components.prototype.initCounterUp = function() {
+    //     var delay = $(this).attr('data-delay')?$(this).attr('data-delay'):100; //default is 100
+    //     var time = $(this).attr('data-time')?$(this).attr('data-time'):1200; //default is 1200
+    //      $('[data-plugin="counterup"]').each(function(idx, obj) {
+    //         $(this).counterUp({
+    //             delay: 100,
+    //             time: 1200
+    //         });
+    //      });
+    // },
 
     //peity charts
     Components.prototype.initPeityCharts = function() {
@@ -124,7 +114,7 @@ File: Main Js File
         this.initPopoverPlugin(),
         this.initSlimScrollPlugin(),
         this.initCustomModalPlugin(),
-        this.initCounterUp(),
+        // this.initCounterUp(),
         this.initPeityCharts(),
         this.initKnob();
     },
@@ -315,5 +305,6 @@ function ($) {
     $.App.init();
 }(window.jQuery);
 
-// Waves Effect
-Waves.init();
+//  Waves Effect
+// Waves.init();
+
